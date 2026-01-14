@@ -4,7 +4,7 @@
    "friendlyName": "Gunship",
    "noseHardpoints": 1,
    "hullHardpoints": 0,
-   "internalModules": 1,
+   "internalModules": 2,
    "consTier": 1,
    "maxOfficers": 1,
    "length_m": 50,
@@ -12,10 +12,12 @@
    "width_m": 10,
    "volume": 1963,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 3,
+   "structuralIntegrity": 4,
    "mass_tons": 178,
    "crew": 3,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -1,
    "missionControl": 1,
    "baseConstructionTime_days": 60,
@@ -58,29 +60,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 4,
+         "moduleSlotType": "Utility",
+         "x": 5,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 5,
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 2,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -112,10 +114,12 @@
    "width_m": 10,
    "volume": 1963,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 5,
+   "structuralIntegrity": 7,
    "mass_tons": 350,
    "crew": 4,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -2,
    "missionControl": 1,
    "baseConstructionTime_days": 90,
@@ -158,29 +162,27 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 4,
-         "y": 3
+         "moduleSlotType": "None"
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 5,
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 2,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "HullHardPoint",
@@ -194,13 +196,13 @@
       },
       {
          "moduleSlotType": "Utility",
-         "x": 6,
-         "y": 2
+         "x": 5,
+         "y": 3
       },
       {
          "moduleSlotType": "Utility",
          "x": 6,
-         "y": 4
+         "y": 3
       },
       {
          "moduleSlotType": "Propellant",
@@ -214,7 +216,7 @@
    "friendlyName": "Corvette",
    "noseHardpoints": 1,
    "hullHardpoints": 1,
-   "internalModules": 2,
+   "internalModules": 3,
    "consTier": 1,
    "maxOfficers": 2,
    "length_m": 65,
@@ -222,10 +224,12 @@
    "width_m": 15,
    "volume": 7069,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 6,
+   "structuralIntegrity": 8,
    "mass_tons": 400,
    "crew": 8,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -3,
    "missionControl": 1,
    "baseConstructionTime_days": 90,
@@ -268,29 +272,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -324,7 +328,7 @@
    "friendlyName": "Frigate",
    "noseHardpoints": 1,
    "hullHardpoints": 2,
-   "internalModules": 4,
+   "internalModules": 5,
    "consTier": 1,
    "maxOfficers": 3,
    "length_m": 100,
@@ -332,10 +336,12 @@
    "width_m": 20,
    "volume": 23562,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 9,
+   "structuralIntegrity": 12,
    "mass_tons": 600,
    "crew": 20,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -4,
    "missionControl": 2,
    "baseConstructionTime_days": 120,
@@ -378,29 +384,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -457,10 +463,12 @@
    "width_m": 20,
    "volume": 31416,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 12,
+   "structuralIntegrity": 16,
    "mass_tons": 800,
    "crew": 35,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -4,
    "missionControl": 2,
    "baseConstructionTime_days": 120,
@@ -494,17 +502,17 @@
    "shipModuleSlots": [
       {
          "moduleSlotType": "Drive",
-         "x": 1,
-         "y": 3
-      },
-      {
-         "moduleSlotType": "PowerPlant",
          "x": 2,
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
+         "moduleSlotType": "PowerPlant",
          "x": 3,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 5,
          "y": 3
       },
       {
@@ -514,18 +522,18 @@
       },
       {
          "moduleSlotType": "TailArmor",
-         "x": 1,
-         "y": 7
+         "x": 2,
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "HullHardPoint",
@@ -533,9 +541,7 @@
          "y": 1
       },
       {
-         "moduleSlotType": "Utility",
-         "x": 7,
-         "y": 3
+         "moduleSlotType": "None"
       },
       {
          "moduleSlotType": "HullHardPoint",
@@ -549,7 +555,7 @@
       },
       {
          "moduleSlotType": "Utility",
-         "x": 6,
+         "x": 7,
          "y": 3
       },
       {
@@ -559,12 +565,12 @@
       },
       {
          "moduleSlotType": "Utility",
-         "x": 5,
+         "x": 6,
          "y": 3
       },
       {
          "moduleSlotType": "Propellant",
-         "x": 1,
+         "x": 2,
          "y": 0
       }
    ]
@@ -574,7 +580,7 @@
    "friendlyName": "Destroyer",
    "noseHardpoints": 2,
    "hullHardpoints": 2,
-   "internalModules": 3,
+   "internalModules": 5,
    "consTier": 2,
    "maxOfficers": 3,
    "length_m": 125,
@@ -582,10 +588,12 @@
    "width_m": 20,
    "volume": 31416,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 12,
+   "structuralIntegrity": 18,
    "mass_tons": 825,
    "crew": 40,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -5,
    "missionControl": 2,
    "baseConstructionTime_days": 135,
@@ -628,29 +636,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -664,33 +672,38 @@
       },
       {
          "moduleSlotType": "HullHardPoint",
+         "x": 6,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 5,
+         "y": 1
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 5,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Utility",
          "x": 6,
          "y": 1
       },
       {
          "moduleSlotType": "Utility",
          "x": 6,
-         "y": 3
-      },
-      {
-         "moduleSlotType": "HullHardPoint",
-         "x": 6,
          "y": 5
-      },
-      {
-         "moduleSlotType": "Utility",
-         "x": 5,
-         "y": 2
-      },
-      {
-         "moduleSlotType": "Utility",
-         "x": 5,
-         "y": 4
       },
       {
          "moduleSlotType": "Propellant",
          "x": 1,
          "y": 0
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 5,
+         "y": 5
       }
    ]
 },
@@ -699,7 +712,7 @@
    "friendlyName": "Cruiser",
    "noseHardpoints": 2,
    "hullHardpoints": 3,
-   "internalModules": 6,
+   "internalModules": 7,
    "consTier": 2,
    "maxOfficers": 4,
    "length_m": 175,
@@ -707,10 +720,12 @@
    "width_m": 20,
    "volume": 47124,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 15,
+   "structuralIntegrity": 20,
    "mass_tons": 1000,
    "crew": 60,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -10,
    "missionControl": 3,
    "baseConstructionTime_days": 180,
@@ -753,29 +768,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -844,7 +859,7 @@
    "friendlyName": "Battlecruiser",
    "noseHardpoints": 3,
    "hullHardpoints": 2,
-   "internalModules": 4,
+   "internalModules": 5,
    "consTier": 2,
    "maxOfficers": 4,
    "length_m": 175,
@@ -852,10 +867,12 @@
    "width_m": 20,
    "volume": 47124,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 18,
+   "structuralIntegrity": 24,
    "mass_tons": 1200,
    "crew": 70,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -12,
    "missionControl": 3,
    "baseConstructionTime_days": 180,
@@ -898,29 +915,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -979,7 +996,7 @@
    "friendlyName": "Battleship",
    "noseHardpoints": 2,
    "hullHardpoints": 6,
-   "internalModules": 5,
+   "internalModules": 6,
    "consTier": 3,
    "maxOfficers": 5,
    "length_m": 200,
@@ -987,10 +1004,12 @@
    "width_m": 25,
    "volume": 85903,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 24,
+   "structuralIntegrity": 40,
    "mass_tons": 1600,
    "crew": 80,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -15,
    "missionControl": 3,
    "baseConstructionTime_days": 200,
@@ -1033,29 +1052,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 2,
+         "moduleSlotType": "Utility",
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 3,
+         "x": 2,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 0,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -1134,7 +1153,7 @@
    "friendlyName": "Lancer",
    "noseHardpoints": 4,
    "hullHardpoints": 3,
-   "internalModules": 6,
+   "internalModules": 7,
    "consTier": 3,
    "maxOfficers": 5,
    "length_m": 250,
@@ -1142,10 +1161,12 @@
    "width_m": 32,
    "volume": 180956,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 30,
+   "structuralIntegrity": 36,
    "mass_tons": 2000,
    "crew": 100,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -20,
    "missionControl": 4,
    "baseConstructionTime_days": 240,
@@ -1188,29 +1209,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 2,
+         "moduleSlotType": "Utility",
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 3,
+         "x": 2,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 0,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -1289,7 +1310,7 @@
    "friendlyName": "Dreadnought",
    "noseHardpoints": 3,
    "hullHardpoints": 8,
-   "internalModules": 6,
+   "internalModules": 7,
    "consTier": 3,
    "maxOfficers": 5,
    "length_m": 275,
@@ -1297,10 +1318,12 @@
    "width_m": 35,
    "volume": 240528,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 36,
+   "structuralIntegrity": 48,
    "mass_tons": 2400,
    "crew": 120,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -25,
    "missionControl": 4,
    "baseConstructionTime_days": 240,
@@ -1343,29 +1366,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 2,
+         "moduleSlotType": "Utility",
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 3,
+         "x": 2,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 0,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
-         "x": 4,
-         "y": 7
+         "x": 3,
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 9,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -1464,7 +1487,7 @@
    "friendlyName": "Titan",
    "noseHardpoints": 4,
    "hullHardpoints": 6,
-   "internalModules": 8,
+   "internalModules": 9,
    "consTier": 3,
    "maxOfficers": 6,
    "length_m": 300,
@@ -1472,10 +1495,12 @@
    "width_m": 35,
    "volume": 264581,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 48,
+   "structuralIntegrity": 64,
    "mass_tons": 3200,
    "crew": 120,
    "alien": false,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": -30,
    "missionControl": 5,
    "baseConstructionTime_days": 270,
@@ -1518,29 +1543,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 2,
+         "moduleSlotType": "Utility",
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 3,
+         "x": 2,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 0,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
-         "x": 4,
-         "y": 7
+         "x": 3,
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 9,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -1642,22 +1667,101 @@
  {
    "dataName": "STOFighter",
    "friendlyName": "STO Fighter",
-   "disable": true,
-   "internalModules": 0,
+   "noseHardpoints": 1,
+   "hullHardpoints": 1,
+   "internalModules": 1,
+   "consTier": 1,
+   "maxOfficers": 0,
+   "length_m": 25,
+   "toylength_cm": 5,
+   "width_m": 8,
+   "volume": 628,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 2,
+   "structuralIntegrity": 3,
+   "mass_tons": 30,
    "crew": 2,
    "alien": false,
+   "noShipyardBuild": true,
+   "simpleHull": true,
    "monthlyIncome_Money": 0,
    "missionControl": 0,
-   "shipModuleSlots": []
+   "baseConstructionTime_days": 60,
+   "shipyardyOffset": [
+      0,
+      0,
+      0
+   ],
+   "modelResource": [
+      "ships/STOFighter"
+   ],
+   "combatUIpath": [
+      "ui_spacecombat/OBJ_battle_earth_JET"
+   ],
+   "path1": [
+      "earth_JET/"
+   ],
+   "path2": [
+      "OBJ_battle_earth_JET"
+   ],
+   "shipModuleSlots": [
+      {
+         "moduleSlotType": "Drive",
+         "x": 0,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "PowerPlant",
+         "x": 1,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 3,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Radiator",
+         "x": 2,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "TailArmor",
+         "x": 0,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "LateralArmor",
+         "x": 4,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "NoseArmor",
+         "x": 9,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 9,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 7,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Propellant",
+         "x": 2,
+         "y": 0
+      }
+   ]
 },
  {
    "dataName": "AlienGunship",
    "friendlyName": "Alien Gunship",
    "noseHardpoints": 1,
    "hullHardpoints": 0,
-   "internalModules": 2,
+   "internalModules": 3,
    "consTier": 1,
    "maxOfficers": 0,
    "length_m": 50,
@@ -1669,6 +1773,8 @@
    "mass_tons": 192,
    "crew": 1,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 64,
@@ -1707,29 +1813,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 4,
+         "moduleSlotType": "Utility",
+         "x": 5,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 5,
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 2,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -1758,7 +1864,7 @@
    "friendlyName": "Alien Escort",
    "noseHardpoints": 0,
    "hullHardpoints": 2,
-   "internalModules": 3,
+   "internalModules": 4,
    "consTier": 1,
    "maxOfficers": 0,
    "length_m": 75,
@@ -1766,10 +1872,12 @@
    "width_m": 10,
    "volume": 3927,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 9,
+   "structuralIntegrity": 10,
    "mass_tons": 288,
    "crew": 2,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 96,
@@ -1808,29 +1916,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "HullHardPoint",
@@ -1869,7 +1977,7 @@
    "friendlyName": "Alien Corvette",
    "noseHardpoints": 1,
    "hullHardpoints": 1,
-   "internalModules": 3,
+   "internalModules": 4,
    "consTier": 1,
    "maxOfficers": 0,
    "length_m": 75,
@@ -1877,10 +1985,12 @@
    "width_m": 10,
    "volume": 3927,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 9,
+   "structuralIntegrity": 10,
    "mass_tons": 288,
    "crew": 3,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 96,
@@ -1919,29 +2029,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -1980,7 +2090,7 @@
    "friendlyName": "Alien Frigate",
    "noseHardpoints": 1,
    "hullHardpoints": 3,
-   "internalModules": 4,
+   "internalModules": 5,
    "consTier": 1,
    "maxOfficers": 0,
    "length_m": 125,
@@ -1988,10 +2098,12 @@
    "width_m": 15,
    "volume": 17671,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 18,
+   "structuralIntegrity": 20,
    "mass_tons": 576,
    "crew": 10,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 128,
@@ -2030,29 +2142,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -2106,7 +2218,7 @@
    "friendlyName": "Alien Monitor",
    "noseHardpoints": 1,
    "hullHardpoints": 4,
-   "internalModules": 4,
+   "internalModules": 5,
    "consTier": 2,
    "maxOfficers": 0,
    "length_m": 150,
@@ -2114,10 +2226,12 @@
    "width_m": 15,
    "volume": 22089,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 21,
+   "structuralIntegrity": 22,
    "mass_tons": 672,
    "crew": 16,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 256,
@@ -2156,29 +2270,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -2237,7 +2351,7 @@
    "friendlyName": "Alien Destroyer",
    "noseHardpoints": 2,
    "hullHardpoints": 2,
-   "internalModules": 4,
+   "internalModules": 5,
    "consTier": 2,
    "maxOfficers": 0,
    "length_m": 150,
@@ -2249,6 +2363,8 @@
    "mass_tons": 672,
    "crew": 20,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 256,
@@ -2287,29 +2403,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 7,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -2363,7 +2479,7 @@
    "friendlyName": "Alien Cruiser",
    "noseHardpoints": 2,
    "hullHardpoints": 4,
-   "internalModules": 6,
+   "internalModules": 7,
    "consTier": 2,
    "maxOfficers": 0,
    "length_m": 200,
@@ -2371,10 +2487,12 @@
    "width_m": 20,
    "volume": 54978,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 32,
+   "structuralIntegrity": 36,
    "mass_tons": 1056,
    "crew": 25,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 320,
@@ -2413,29 +2531,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -2509,7 +2627,7 @@
    "friendlyName": "Alien Battlecruiser",
    "noseHardpoints": 3,
    "hullHardpoints": 3,
-   "internalModules": 5,
+   "internalModules": 6,
    "consTier": 2,
    "maxOfficers": 0,
    "length_m": 245,
@@ -2521,6 +2639,8 @@
    "mass_tons": 1440,
    "crew": 35,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 360,
@@ -2559,29 +2679,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 2,
+         "moduleSlotType": "Utility",
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 3,
+         "x": 2,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 0,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 9,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -2650,7 +2770,7 @@
    "friendlyName": "Alien Battleship",
    "noseHardpoints": 2,
    "hullHardpoints": 6,
-   "internalModules": 6,
+   "internalModules": 7,
    "consTier": 2,
    "maxOfficers": 0,
    "length_m": 250,
@@ -2658,10 +2778,12 @@
    "width_m": 25,
    "volume": 110447,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 48,
+   "structuralIntegrity": 60,
    "mass_tons": 1536,
    "crew": 40,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 360,
@@ -2700,29 +2822,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 2,
+         "moduleSlotType": "Utility",
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 3,
+         "x": 2,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 0,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -2804,34 +2926,177 @@
  {
    "dataName": "AlienLancer",
    "friendlyName": "Alien Lancer",
-   "disable": true,
    "noseHardpoints": 6,
    "hullHardpoints": 4,
+   "internalModules": 7,
+   "consTier": 2,
    "maxOfficers": 0,
    "length_m": 275,
    "toylength_cm": 16.6,
    "width_m": 25,
    "volume": 122718,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 48,
+   "structuralIntegrity": 52,
    "mass_tons": 1536,
+   "crew": 40,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
+   "baseConstructionTime_days": 360,
+   "shipyardyOffset": [
+      0,
+      0,
+      0
+   ],
+   "modelResource": [
+      "ships/AlienLancer"
+   ],
+   "combatUIpath": [
+      "ui_spacecombat/OBJ_battle_hydra_LC"
+   ],
+   "path1": [
+      "hydra_LC/"
+   ],
+   "path2": [
+      "OBJ_battle_hydra_LC"
+   ],
    "requiredProjectName": "Project_AlienMasterProject",
    "weightedBuildMaterials": {
       "volatiles": 0.1,
       "metals": 0.6,
       "nobleMetals": 0.3
    },
-   "shipModuleSlots": []
+   "shipModuleSlots": [
+      {
+         "moduleSlotType": "Drive",
+         "x": 0,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "PowerPlant",
+         "x": 1,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 3,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Radiator",
+         "x": 2,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "TailArmor",
+         "x": 0,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "LateralArmor",
+         "x": 4,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "NoseArmor",
+         "x": 9,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 8,
+         "y": 1
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 8,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 8,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 9,
+         "y": 1
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 9,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 9,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 4,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 5,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 6,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 7,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 5,
+         "y": 1
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 5,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 6,
+         "y": 1
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 6,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 7,
+         "y": 1
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 7,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "Propellant",
+         "x": 0,
+         "y": 0
+      }
+   ]
 },
  {
    "dataName": "AlienDreadnought",
    "friendlyName": "Alien Dreadnought",
    "noseHardpoints": 4,
    "hullHardpoints": 8,
-   "internalModules": 8,
+   "internalModules": 9,
    "consTier": 2,
    "maxOfficers": 0,
    "length_m": 300,
@@ -2839,10 +3104,12 @@
    "width_m": 30,
    "volume": 194386,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 64,
+   "structuralIntegrity": 72,
    "mass_tons": 2016,
    "crew": 50,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 480,
@@ -2881,29 +3148,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 2,
+         "moduleSlotType": "Utility",
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 3,
+         "x": 2,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 0,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 9,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -2942,8 +3209,8 @@
       },
       {
          "moduleSlotType": "Utility",
-         "x": 4,
-         "y": 0
+         "x": 3,
+         "y": 1
       },
       {
          "moduleSlotType": "Utility",
@@ -2962,8 +3229,8 @@
       },
       {
          "moduleSlotType": "Utility",
-         "x": 4,
-         "y": 6
+         "x": 3,
+         "y": 5
       },
       {
          "moduleSlotType": "HullHardPoint",
@@ -3015,34 +3282,197 @@
  {
    "dataName": "AlienTitan",
    "friendlyName": "Alien Titan",
-   "disable": true,
    "noseHardpoints": 6,
    "hullHardpoints": 8,
+   "internalModules": 7,
+   "consTier": 3,
    "maxOfficers": 0,
    "length_m": 400,
    "toylength_cm": 20,
    "width_m": 30,
    "volume": 265072,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 72,
+   "structuralIntegrity": 90,
    "mass_tons": 2304,
+   "crew": 60,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
+   "baseConstructionTime_days": 480,
+   "shipyardyOffset": [
+      0,
+      0,
+      0
+   ],
+   "modelResource": [
+      "ships/AlienTitan"
+   ],
+   "combatUIpath": [
+      "ui_spacecombat/OBJ_battle_hydra_TI"
+   ],
+   "path1": [
+      "hydra_TI/"
+   ],
+   "path2": [
+      "OBJ_battle_hydra_TI"
+   ],
    "requiredProjectName": "Project_AlienMasterProject",
    "weightedBuildMaterials": {
       "volatiles": 0.1,
       "metals": 0.6,
       "nobleMetals": 0.3
    },
-   "shipModuleSlots": []
+   "shipModuleSlots": [
+      {
+         "moduleSlotType": "Drive",
+         "x": 0,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "PowerPlant",
+         "x": 1,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 3,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Radiator",
+         "x": 2,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "TailArmor",
+         "x": 0,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "LateralArmor",
+         "x": 4,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "NoseArmor",
+         "x": 9,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 8,
+         "y": 1
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 8,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 8,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 9,
+         "y": 1
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 9,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 9,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 4,
+         "y": 2
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 4,
+         "y": 4
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 5,
+         "y": 2
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 5,
+         "y": 4
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 6,
+         "y": 2
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 6,
+         "y": 4
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 7,
+         "y": 2
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 7,
+         "y": 4
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 5,
+         "y": 0
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 6,
+         "y": 0
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 7,
+         "y": 0
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 5,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 6,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 7,
+         "y": 5
+      },
+      {
+         "moduleSlotType": "Propellant",
+         "x": 0,
+         "y": 0
+      }
+   ]
 },
  {
    "dataName": "AlienAssaultCarrier",
    "friendlyName": "Alien Assault Carrier",
    "noseHardpoints": 0,
    "hullHardpoints": 6,
-   "internalModules": 5,
+   "internalModules": 6,
    "consTier": 3,
    "maxOfficers": 0,
    "length_m": 300,
@@ -3050,10 +3480,12 @@
    "width_m": 30,
    "volume": 194386,
    "thrusterMultiplier": 1,
-   "structuralIntegrity": 96,
+   "structuralIntegrity": 90,
    "mass_tons": 2688,
    "crew": 80,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 480,
@@ -3092,29 +3524,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 3,
+         "moduleSlotType": "Utility",
+         "x": 4,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 4,
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 1,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
          "x": 4,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 8,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "HullHardPoint",
@@ -3183,7 +3615,7 @@
    "friendlyName": "Alien Mothership",
    "noseHardpoints": 4,
    "hullHardpoints": 16,
-   "internalModules": 6,
+   "internalModules": 7,
    "consTier": 3,
    "maxOfficers": 0,
    "length_m": 600,
@@ -3191,10 +3623,12 @@
    "width_m": 60,
    "volume": 1625774,
    "thrusterMultiplier": 3,
-   "structuralIntegrity": 240,
+   "structuralIntegrity": 512,
    "mass_tons": 7680,
    "crew": 100,
    "alien": true,
+   "noShipyardBuild": false,
+   "simpleHull": false,
    "monthlyIncome_Money": 0,
    "missionControl": 1,
    "baseConstructionTime_days": 512,
@@ -3234,29 +3668,29 @@
          "y": 3
       },
       {
-         "moduleSlotType": "Battery",
-         "x": 2,
+         "moduleSlotType": "Utility",
+         "x": 3,
          "y": 3
       },
       {
          "moduleSlotType": "Radiator",
-         "x": 3,
+         "x": 2,
          "y": 3
       },
       {
          "moduleSlotType": "TailArmor",
          "x": 0,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "LateralArmor",
-         "x": 4,
-         "y": 7
+         "x": 3,
+         "y": 6
       },
       {
          "moduleSlotType": "NoseArmor",
          "x": 9,
-         "y": 7
+         "y": 6
       },
       {
          "moduleSlotType": "NoseHardPoint",
@@ -3380,12 +3814,12 @@
       },
       {
          "moduleSlotType": "Utility",
-         "x": 0,
+         "x": 1,
          "y": 5
       },
       {
          "moduleSlotType": "Utility",
-         "x": 0,
+         "x": 1,
          "y": 1
       },
       {
@@ -3398,18 +3832,94 @@
  {
    "dataName": "SalamanderGunship",
    "friendlyName": "Salamander Gunship",
-   "disable": true,
+   "noseHardpoints": 1,
+   "hullHardpoints": 1,
+   "internalModules": 1,
+   "consTier": 1,
+   "maxOfficers": 0,
+   "length_m": 35,
+   "toylength_cm": 5.9,
+   "width_m": 8,
+   "volume": 880,
+   "thrusterMultiplier": 3,
    "structuralIntegrity": 3,
+   "mass_tons": 20,
    "crew": 1,
    "alien": true,
+   "noShipyardBuild": true,
+   "simpleHull": true,
    "monthlyIncome_Money": 0,
-   "missionControl": 1,
+   "missionControl": 0,
+   "baseConstructionTime_days": 60,
+   "shipyardyOffset": [
+      0,
+      0,
+      0
+   ],
+   "modelResource": [
+      "ships/SalamanderGunship"
+   ],
+   "combatUIpath": [
+      "ui_spacecombat/OBJ_battle_sal_GS"
+   ],
+   "path1": [
+      "salamander_GS/"
+   ],
+   "path2": [
+      "OBJ_battle_sal_GS"
+   ],
    "requiredProjectName": "Project_AlienMasterProject",
-   "weightedBuildMaterials": {
-      "volatiles": 0.1,
-      "metals": 0.7,
-      "nobleMetals": 0.2
-   },
-   "shipModuleSlots": []
+   "shipModuleSlots": [
+      {
+         "moduleSlotType": "Drive",
+         "x": 0,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "PowerPlant",
+         "x": 1,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Utility",
+         "x": 3,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Radiator",
+         "x": 2,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "TailArmor",
+         "x": 0,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "LateralArmor",
+         "x": 4,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "NoseArmor",
+         "x": 9,
+         "y": 6
+      },
+      {
+         "moduleSlotType": "NoseHardPoint",
+         "x": 9,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "HullHardPoint",
+         "x": 7,
+         "y": 3
+      },
+      {
+         "moduleSlotType": "Propellant",
+         "x": 2,
+         "y": 0
+      }
+   ]
 }
 ]

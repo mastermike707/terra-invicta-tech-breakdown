@@ -8,8 +8,7 @@
    "emissivity": 0.85,
    "vulnerability": 30,
    "collector": false,
-   "requiredProjectName": "Project_Warships",
-   "crew": 1,
+   "crew": 0,
    "weightedBuildMaterials": {
       "volatiles": 0,
       "metals": 1,
@@ -30,7 +29,7 @@
    "vulnerability": 20,
    "collector": false,
    "requiredProjectName": "Project_Warships",
-   "crew": 1,
+   "crew": 0,
    "weightedBuildMaterials": {
       "volatiles": 0,
       "metals": 0,
@@ -51,7 +50,7 @@
    "vulnerability": 10,
    "collector": false,
    "requiredProjectName": "Project_MolybdenumPipeRadiator",
-   "crew": 1,
+   "crew": 0,
    "weightedBuildMaterials": {
       "volatiles": 0,
       "metals": 0.5,
@@ -72,7 +71,7 @@
    "vulnerability": 5,
    "collector": false,
    "requiredProjectName": "Project_NanotubeFilamentRadiator",
-   "crew": 1,
+   "crew": 0,
    "weightedBuildMaterials": {
       "volatiles": 0.95,
       "metals": 0.05,
@@ -219,12 +218,12 @@
    "vulnerability": 2,
    "collector": false,
    "requiredProjectName": "Project_ExoticSpikeRadiator",
-   "crew": 2,
+   "crew": 0,
    "weightedBuildMaterials": {
       "volatiles": 0.05,
-      "metals": 0.055,
+      "metals": 0.058,
       "nobleMetals": 0.89,
-      "exotics": 0.005
+      "exotics": 0.002
    },
    "iconResource": "shipbuildericons/ICO_ExoticSpikeRadiator",
    "combatUIpath": "spike",
@@ -240,7 +239,7 @@
    "vulnerability": 3,
    "collector": false,
    "requiredProjectName": "Project_AlienMasterProject",
-   "crew": 1,
+   "crew": 0,
    "weightedBuildMaterials": {
       "volatiles": 0.9,
       "metals": 0.05,
@@ -261,12 +260,12 @@
    "vulnerability": 1,
    "collector": false,
    "requiredProjectName": "Project_AlienMasterProject",
-   "crew": 1,
+   "crew": 0,
    "weightedBuildMaterials": {
       "volatiles": 0.9,
-      "metals": 0.09,
+      "metals": 0.096,
       "nobleMetals": 0,
-      "exotics": 0.01
+      "exotics": 0.004
    },
    "iconResource": "shipbuildericons/ICO_ExoticTendrilRadiator",
    "combatUIpath": "spike",
