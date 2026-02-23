@@ -19,6 +19,7 @@ const TRANSLATION_FILES = [
     'TIMissileTemplate',
     'TIUtilityModuleTemplate',
     'TIParticleWeaponTemplate',
+    'TIOrgTemplate',
 ];
 
 class Tree {

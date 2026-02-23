@@ -50,6 +50,15 @@ a:hover {
     font-size: 120%;
     padding: 5px;
     text-align: center;
+    transition: all 0.2s;
+}
+.role h1.opened {
+    background-color: rgb(58, 80, 100);
+    border-bottom: 2px solid rgb(100, 150, 200);
+    color: white;
+}
+.role h1:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .role > .content {
     display: flex;
@@ -215,4 +224,32 @@ header {
     margin-right: 10px;
     color: #4CAF50;
     border: 1px solid #4CAF50;
+}
+
+.org_yields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+    font-size: 0.85em;
+    align-items: center;
+}
+
+.yield_item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #ffd;
+}
+
+.yield_item img {
+    margin-right: 3px;
+}
+
+.yield_stat {
+    font-weight: bold;
+    color: #7df;
+    margin-right: 2px;
 }

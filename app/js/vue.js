@@ -20,6 +20,7 @@ const app = Vue.createApp({
             effects: new Effects(),
             benefits: new Benefits(),
             modules: new Modules(),
+            orgs: new Orgs(),
             tree: new Tree(),
             // Filters
             loading: true,
@@ -42,6 +43,7 @@ const app = Vue.createApp({
                 this.effects.load(),
                 this.benefits.load(),
                 this.modules.load(),
+                this.orgs.load(),
                 this.tree.load(),
             ]);
             this.loading = false;
