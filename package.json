@@ -13,6 +13,9 @@
     "invicta",
     "tech tree"
   ],
-  "author": "Hiryus",
+  "author": "Mike <mastermike707@gmail.com>",
+  "contributors": [
+    "Hiryus"
+  ],
   "license": "ISC"
 }
