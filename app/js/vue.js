@@ -18,6 +18,7 @@ const app = Vue.createApp({
         return {
             // Data
             effects: new Effects(),
+            benefits: new Benefits(),
             modules: new Modules(),
             tree: new Tree(),
             // Filters
@@ -26,7 +27,7 @@ const app = Vue.createApp({
             search: '',
             pinned: [],
             description: false,
-            known_requirements: false,
+            show_effects: true,
             unknown_requirements: true,
             // Drag and drop
             draggedName: null,
@@ -39,6 +40,7 @@ const app = Vue.createApp({
         try {
             await Promise.all([
                 this.effects.load(),
+                this.benefits.load(),
                 this.modules.load(),
                 this.tree.load(),
             ]);
@@ -56,8 +58,18 @@ const app = Vue.createApp({
                 .reduce((roles, tech) => roles.add(tech.role), new Set());
             return Array.from(roles).sort();
         },
+        totalPinnedCost() {
+            return this.tree.getTotalMissingScience(this.pinned);
+        },
+        knownTechnologies() {
+            return Object.values(this.tree.data)
+                .filter(tech => tech.known)
+                .sort((a, b) => (a.displayName || a.friendlyName).localeCompare(b.displayName || b.friendlyName));
+        },
         pinnedTechnologies() {
-            return this.pinned.map(x => this.tree.get(x));
+            return this.pinned
+                .map(x => this.tree.get(x))
+                .sort((a, b) => this.tree.getMissingScience(a.dataName) - this.tree.getMissingScience(b.dataName));
         },
         technologies() {
             if (this.search.length < 3) {
@@ -131,6 +143,24 @@ const app = Vue.createApp({
                 console.error(err);
             }
         },
+        jumpToTech(dataName) {
+            const tech = this.tree.get(dataName);
+            const role = tech.role;
+            if (role) {
+                if (!this.opened.includes(role)) {
+                    this.opened.push(role);
+                }
+                this.search = ''; // Clear search to ensure it's visible
+                Vue.nextTick(() => {
+                    const el = document.getElementById(`tech-${dataName}`);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        el.classList.add('highlight');
+                        setTimeout(() => el.classList.remove('highlight'), 2000);
+                    }
+                });
+            }
+        },
         open(url) {
             window.open(url, '_blank').focus();
         },
@@ -153,6 +183,15 @@ const app = Vue.createApp({
                 this.opened.splice(idx, 1); 
             } else {
                 this.opened.push(role);
+            }
+        },
+        toggleKnown(dataName) {
+            const tech = this.tree.get(dataName);
+            tech.known = !tech.known;
+            if (tech.known) {
+                this.tree.getAllRequirements(dataName).forEach(reqName => {
+                    this.tree.get(reqName).known = true;
+                });
             }
         },
         unpin(dataName) {

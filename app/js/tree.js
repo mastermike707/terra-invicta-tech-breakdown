@@ -154,6 +154,24 @@ class Tree {
         const prereqsCost = tech.prereqs.reduce((total, prereqName) => total + this.getTotalScience(prereqName), 0);
         return prereqsCost + tech.researchCost ;
     }
+    /**
+     * Return the science points required to unlock given list of techs and all their unknown prerequisites (deduplicated).
+     */
+    getTotalMissingScience(dataNames) {
+        const allUnknowns = new Set();
+        dataNames.forEach(dataName => {
+            if (!this.get(dataName).known) {
+                allUnknowns.add(dataName);
+            }
+            this.getUnknownRequirements(dataName).forEach(req => allUnknowns.add(req));
+        });
+        
+        let total = 0;
+        allUnknowns.forEach(dataName => {
+            total += this.get(dataName).researchCost || 0;
+        });
+        return total;
+    }
 
     async load() {
         // Load templates

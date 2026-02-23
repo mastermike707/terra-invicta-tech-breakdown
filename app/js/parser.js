@@ -1,6 +1,7 @@
 class Parser {
     static translations = {};
     static templates = {};
+    static gamePath = "/game-data";
 
     static async loadLocalizationFile(filename) {
         // Check cache first
@@ -9,7 +10,7 @@ class Parser {
         }
 
         // Fetch data
-        const response = await fetch(`game/localization/${filename}.en`);
+        const response = await fetch(`${Parser.gamePath}/Localization/en/${filename}.en`);
         const data = await response.text();
 
         // Parse data line by line
@@ -26,7 +27,7 @@ class Parser {
             return Parser.templates[filename];
         }
 
-        const response = await fetch(`game/templates/${filename}.json`);
+        const response = await fetch(`${Parser.gamePath}/Templates/${filename}.json`);
         try {
             Parser.templates[filename] = await response.json();
         } catch (err) {
