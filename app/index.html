@@ -24,275 +24,44 @@
             <header>
                 <input type="search" v-model="search" placeholder="filter by name...">
                 <input type="submit" @click="loadSave" value="Load game save">
+                <input type="submit" @click="show_cp = !show_cp" :value="show_cp ? 'Show Roles' : 'CP Techs'">
                 <input type="submit" @click="open('img/help.png')" value="Help!">
             </header>
-            <h1>Available Techs</h1>
-            <ul v-if="!loading">
-                <li v-for="role in roles" class="role">
-                    <h1 @click="toggle(role)" :class="{ opened: opened.includes(role) }">
-                        {{role}}
-                    </h1>
-                    <ul v-if="opened.includes(role)" class="content">
-                        <li v-for="project in techByRole(role)" :key="project.dataName" :id="'tech-' + project.dataName"
-                            :class="tree.getStatus(project.dataName)" class="card">
-                            <h2>
-                                <img v-if="project.type === 'project'" src="img/project.svg" height="20">
-                                <img v-if="project.type === 'technology'" src="img/science.svg" height="24">
-                                <span class="name" @click.left.prevent="project.show = !project.show"
-                                    @click.right.prevent="toggleKnown(project.dataName)">
-                                    L{{tree.getLevel(project.dataName)}} - {{capitalize(project.type)}}
-                                    {{project.displayName || project.friendlyName}}
-                                </span>
-                                <span class="actions">
-                                    <a @click.stop="toggleKnown(project.dataName)"
-                                        :title="project.known ? 'Mark as Unknown' : 'Mark as Known'">
-                                        {{ project.known ? '✅ Known' : '🔬 Mark Known' }}
-                                    </a>
-                                    <a @click.stop="pin(project.dataName)" title="Pin">📌 Pin</a>
-                                </span>
-                                <span
-                                    class="points">{{Intl.NumberFormat().format(tree.getMissingScience(project.dataName))}}</span>
-                                <span v-if="benefits.get(project.dataName)" class="benefit">
-                                    ({{benefits.get(project.dataName).value}} {{benefits.get(project.dataName).label}} -
-                                    {{ (benefits.get(project.dataName).value / project.researchCost * 1000).toFixed(4)
-                                    }} / 1k RP)
-                                </span>
-                            </h2>
-                            <div v-if="project.show" class="content">
-                                <div class="description">
-                                    <div v-if="project.description || project.summary">
-                                        <h3>Description:</h3>
-                                        {{project.description || project.summary}}
-                                    </div>
-                                    <div v-if="modules.getProjectModules(project.dataName).length > 0">
-                                        <h3>Unlock module(s):</h3>
-                                        <ul v-for="module in modules.getProjectModules(project.dataName)"
-                                            :key="module.dataName">
-                                            <li>{{module.displayName || module.friendlyName}} (<a :href="module.wiki"
-                                                    target="_blank">wiki</a>)</li>
-                                        </ul>
-                                    </div>
-                                    <div v-if="show_effects && orgs.getTechOrgs(project.dataName).length > 0">
-                                        <h3>Unlock Org(s):</h3>
-                                        <ul v-for="org in orgs.getTechOrgs(project.dataName)" :key="org.dataName">
-                                            <li>
-                                                <strong>{{org.displayName || org.friendlyName}}</strong>
-                                                <div class="org_yields">
-                                                    <span v-for="y in orgs.getYields(org)" class="yield_item">
-                                                        <img :src="'img/icons/ICO_' + y.icon + '.png'" height="14">
-                                                        {{y.value}}
-                                                    </span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div v-if="project.effects.length > 0">
-                                        <h3>Effects:</h3>
-                                        <ul v-for="dataName in project.effects">
-                                            <li>{{effects.getDescription(dataName)}}</li>
-                                        </ul>
-                                    </div>
-                                    <div v-if="project.resourcesGranted.length > 0">
-                                        <h3>Resources granted:</h3>
-                                        <ul v-for="{ resource, value } in project.resourcesGranted" :key="resource">
-                                            <li>{{value}} {{resource}}</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div v-if="project.prereqs.length > 0" class="requirements">
-                                    <h3>Requirements:</h3>
-                                    <ul>
-                                        <li v-for="req in tree.getAllRequirements(project.dataName)"
-                                            :class="tree.getStatus(req)" @click.left.prevent="jumpToTech(req)"
-                                            @click.right.prevent="toggleKnown(req)">
-                                            <img v-if="tree.get(req).type === 'project'" src="img/project.svg"
-                                                height="12">
-                                            <img v-if="tree.get(req).type === 'technology'" src="img/science.svg"
-                                                height="12">
-                                            {{tree.get(req).displayName || tree.get(req).friendlyName}}
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
+            <h1 v-if="show_cp">CP Efficiency (Total Cost / CP)</h1>
+            <h1 v-else>Available Techs</h1>
+            <ul v-if="!loading && show_cp">
+                <tech-card v-for="{ tech, cpStats } in cpTechnologies" :key="tech.dataName" :project="tech" :tree="tree"
+                    :effects="effects" :modules="modules" :orgs="orgs" :show-content="tech.show"
+                    :description="description" :show-effects="show_effects" :is-pinned="pinned.includes(tech.dataName)"
+                    :cp-efficiency-mode="true" @toggle-show="tech.show = !tech.show"
+                    @toggle-known="toggleKnown(tech.dataName)" @pin="pin(tech.dataName)" @unpin="unpin(tech.dataName)"
+                    @jump-to-tech="jumpToTech"></tech-card>
             </ul>
+            <tech-roles v-else-if="!loading" :technologies="technologies" :tree="tree" :effects="effects"
+                :modules="modules" :orgs="orgs" :opened="opened" :description="description" :show-effects="show_effects"
+                :pinned="pinned" @toggle-role="toggle" @toggle-known="toggleKnown" @pin="pin" @unpin="unpin"
+                @jump-to-tech="jumpToTech"></tech-roles>
         </div>
-        <div v-if="!loading" class="panel pinned_panel" @drop="dropHandler">
-            <header>
-                <span>
-                    <input type="checkbox" v-model="description" id="description_cb" name="description" checked>
-                    <label for="description_cb">Description</label>
-                </span>
-                <span>
-                    <input type="checkbox" v-model="show_effects" id="effects_cb" name="effects" checked>
-                    <label for="effects_cb">Effects</label>
-                </span>
-            </header>
-            <h1>Pinned ({{Intl.NumberFormat().format(totalPinnedCost)}} RP)</h1>
-            <ul>
-                <li v-show="showShadow" class="drop_shadow" :style="`order: ${shadowIndex}`"
-                    @dragover="ev => dragoverHandler(ev, shadowIndex)"></li>
-                <li draggable="true" v-for="(project, idx) in pinnedTechnologies"
-                    :class="(draggedName === project.dataName) ? `dragged ${tree.getStatus(project.dataName)}` : tree.getStatus(project.dataName)"
-                    class="card" :style="`order: ${idx}`" @dragstart="ev => dragstartHandler(ev, project.dataName)"
-                    @dragover="ev => dragoverHandler(ev, idx)" @dragend="dragsendHandler">
-                    <h2>
-                        <img v-if="project.type === 'project'" src="img/project.svg" height="20">
-                        <img v-if="project.type === 'technology'" src="img/science.svg" height="24">
-                        <span class="name" @click.right.prevent="toggleKnown(project.dataName)">
-                            L{{tree.getLevel(project.dataName)}} - {{capitalize(project.type)}} {{project.displayName ||
-                            project.friendlyName}}
-                        </span>
-                        <span class="actions">
-                            <a @click.stop="toggleKnown(project.dataName)"
-                                :title="project.known ? 'Mark as Unknown' : 'Mark as Known'">
-                                {{ project.known ? '✅ Known' : '🔬 Mark Known' }}
-                            </a>
-                            <a @click.stop="unpin(project.dataName)" title="Unpin">🗑️ Unpin</a>
-                        </span>
-                        <span
-                            class="points">{{Intl.NumberFormat().format(tree.getMissingScience(project.dataName))}}</span>
-                        <span v-if="benefits.get(project.dataName)" class="benefit">
-                            ({{benefits.get(project.dataName).value}} {{benefits.get(project.dataName).label}} -
-                            {{ (benefits.get(project.dataName).value / project.researchCost * 1000).toFixed(4) }} / 1k
-                            RP)
-                        </span>
-                    </h2>
-                    <div class="content" v-if="description || show_effects || project.prereqs.length > 0">
-                        <div class="description" v-if="description || show_effects">
-                            <div v-if="description && (project.description || project.summary)">
-                                <h3>Description:</h3>
-                                {{project.description || project.summary}}
-                            </div>
-                            <div v-if="show_effects && modules.getProjectModules(project.dataName).length > 0">
-                                <h3>Unlock module(s):</h3>
-                                <ul v-for="module in modules.getProjectModules(project.dataName)"
-                                    :key="module.dataName">
-                                    <li>{{module.displayName || module.friendlyName}} (<a :href="module.wiki"
-                                            target="_blank">wiki</a>)</li>
-                                </ul>
-                            </div>
-                            <div v-if="show_effects && orgs.getTechOrgs(project.dataName).length > 0">
-                                <h3>Unlock Org(s):</h3>
-                                <ul v-for="org in orgs.getTechOrgs(project.dataName)" :key="org.dataName">
-                                    <li>
-                                        <strong>{{org.displayName || org.friendlyName}}</strong>
-                                        <div class="org_yields">
-                                            <span v-for="y in orgs.getYields(org)" class="yield_item">
-                                                <img :src="'img/icons/ICO_' + y.icon + '.png'" height="14">
-                                                {{y.value}}
-                                            </span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div v-if="show_effects && project.effects.length > 0">
-                                <h3>Effects:</h3>
-                                <ul v-for="dataName in project.effects">
-                                    <li>{{effects.getDescription(dataName)}}</li>
-                                </ul>
-                            </div>
-                            <div v-if="description && project.resourcesGranted.length > 0">
-                                <h3>Resources granted:</h3>
-                                <ul v-for="{ resource, value } in project.resourcesGranted" :key="resource">
-                                    <li>{{value}} {{resource}}</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div v-if="project.prereqs.length > 0" class="requirements">
-                            <h3>Requirements:</h3>
-                            <ul>
-                                <li v-for="req in tree.getAllRequirements(project.dataName)"
-                                    :class="tree.getStatus(req)" @click.left.prevent="jumpToTech(req)"
-                                    @click.right.prevent="toggleKnown(req)">
-                                    <img v-if="tree.get(req).type === 'project'" src="img/project.svg" height="12">
-                                    <img v-if="tree.get(req).type === 'technology'" src="img/science.svg" height="12">
-                                    {{tree.get(req).displayName || tree.get(req).friendlyName}}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li class="drop_ghost" :style="`order: ${pinnedTechnologies.length}`"
-                    @dragover="ev => dragoverHandler(ev, pinnedTechnologies.length)"></li>
-            </ul>
-        </div>
+        <tech-pinned v-if="!loading" :pinned="pinned" :tree="tree" :effects="effects" :modules="modules" :orgs="orgs"
+            v-model:description="description" v-model:show-effects="show_effects" @toggle-known="toggleKnown"
+            @unpin="unpin" @jump-to-tech="jumpToTech"></tech-pinned>
 
-        <div v-if="!loading" class="panel known_panel">
-            <h1>Known ({{knownTechnologies.length}})</h1>
-            <ul>
-                <li v-for="project in knownTechnologies" :key="project.dataName" class="card known">
-                    <h2>
-                        <img v-if="project.type === 'project'" src="img/project.svg" height="20">
-                        <img v-if="project.type === 'technology'" src="img/science.svg" height="24">
-                        <span class="name">
-                            L{{tree.getLevel(project.dataName)}} - {{capitalize(project.type)}} {{project.displayName ||
-                            project.friendlyName}}
-                        </span>
-                        <span class="actions">
-                            <a @click.stop="toggleKnown(project.dataName)" title="Mark as Unknown">🔬 Mark Unknown</a>
-                            <a v-if="!pinned.includes(project.dataName)" @click.stop="pin(project.dataName)"
-                                title="Pin">📌
-                                Pin</a>
-                        </span>
-                    </h2>
-                    <div class="content" v-if="description || show_effects">
-                        <div class="description">
-                            <div v-if="description && (project.description || project.summary)">
-                                <h3>Description:</h3>
-                                {{project.description || project.summary}}
-                            </div>
-                            <div v-if="show_effects && modules.getProjectModules(project.dataName).length > 0">
-                                <h3>Unlock module(s):</h3>
-                                <ul v-for="module in modules.getProjectModules(project.dataName)"
-                                    :key="module.dataName">
-                                    <li>{{module.displayName || module.friendlyName}} (<a :href="module.wiki"
-                                            target="_blank">wiki</a>)</li>
-                                </ul>
-                            </div>
-                            <div v-if="show_effects && orgs.getTechOrgs(project.dataName).length > 0">
-                                <h3>Unlock Org(s):</h3>
-                                <ul v-for="org in orgs.getTechOrgs(project.dataName)" :key="org.dataName">
-                                    <li>
-                                        <strong>{{org.displayName || org.friendlyName}}</strong>
-                                        <div class="org_yields">
-                                            <span v-for="y in orgs.getYields(org)" class="yield_item">
-                                                <img :src="'img/icons/ICO_' + y.icon + '.png'" height="14">
-                                                {{y.value}}
-                                            </span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div v-if="show_effects && project.effects.length > 0">
-                                <h3>Effects:</h3>
-                                <ul v-for="dataName in project.effects">
-                                    <li>{{effects.getDescription(dataName)}}</li>
-                                </ul>
-                            </div>
-                            <div v-if="description && project.resourcesGranted.length > 0">
-                                <h3>Resources granted:</h3>
-                                <ul v-for="{ resource, value } in project.resourcesGranted" :key="resource">
-                                    <li>{{value}} {{resource}}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <tech-known v-if="!loading" :tree="tree" :effects="effects" :modules="modules" :orgs="orgs"
+            :description="description" :show-effects="show_effects" :pinned="pinned" @toggle-known="toggleKnown"
+            @pin="pin" @unpin="unpin" @jump-to-tech="jumpToTech"></tech-known>
     </div>
 
     <script src="https://unpkg.com/pako@2/dist/pako.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/parser.js"></script>
     <script src="js/effects.js"></script>
-    <script src="js/benefits.js"></script>
     <script src="js/modules.js"></script>
     <script src="js/orgs.js"></script>
     <script src="js/tree.js"></script>
+    <script src="components/tech-card.js"></script>
+    <script src="components/tech-roles.js"></script>
+    <script src="components/tech-pinned.js"></script>
+    <script src="components/tech-known.js"></script>
     <script src="js/vue.js"></script>
 </body>
 

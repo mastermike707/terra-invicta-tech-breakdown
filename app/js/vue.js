@@ -13,12 +13,19 @@ function unzip(input) {
     return new TextDecoder().decode(rawData);
 }
 
+function loadComponent(name, logic) {
+    return Vue.defineAsyncComponent(async () => {
+        const response = await fetch(`components/${name}.html`);
+        const template = await response.text();
+        return { ...logic, template };
+    });
+}
+
 const app = Vue.createApp({
     data() {
         return {
             // Data
             effects: new Effects(),
-            benefits: new Benefits(),
             modules: new Modules(),
             orgs: new Orgs(),
             tree: new Tree(),
@@ -30,10 +37,7 @@ const app = Vue.createApp({
             description: false,
             show_effects: true,
             unknown_requirements: true,
-            // Drag and drop
-            draggedName: null,
-            showShadow: false,
-            shadowIndex: 0,
+            show_cp: false,
         };
     },
 
@@ -41,7 +45,6 @@ const app = Vue.createApp({
         try {
             await Promise.all([
                 this.effects.load(),
-                this.benefits.load(),
                 this.modules.load(),
                 this.orgs.load(),
                 this.tree.load(),
@@ -54,71 +57,51 @@ const app = Vue.createApp({
     },
 
     computed: {
-        roles() {
-            const roles = this.technologies
-                .filter(tech => typeof tech.role === 'string' && tech.role.length > 0)
-                .reduce((roles, tech) => roles.add(tech.role), new Set());
-            return Array.from(roles).sort();
-        },
-        totalPinnedCost() {
-            return this.tree.getTotalMissingScience(this.pinned);
-        },
-        knownTechnologies() {
-            return Object.values(this.tree.data)
-                .filter(tech => tech.known)
-                .sort((a, b) => (a.displayName || a.friendlyName).localeCompare(b.displayName || b.friendlyName));
-        },
-        pinnedTechnologies() {
-            return this.pinned
-                .map(x => this.tree.get(x))
-                .sort((a, b) => this.tree.getMissingScience(a.dataName) - this.tree.getMissingScience(b.dataName));
-        },
         technologies() {
             if (this.search.length < 3) {
                 return Object.values(this.tree.data);
             }
             return Object.values(this.tree.data).filter(x => typeof x.displayName === 'string' && x.displayName.toLowerCase().includes(this.search.toLowerCase()));
         },
+        cpTechnologies() {
+            return this.technologies
+                .map(tech => ({ tech, cpStats: this.getCPStats(tech) }))
+                .filter(x => x.cpStats !== null)
+                .sort((a, b) => (a.cpStats.totalCost / a.cpStats.cp) - (b.cpStats.totalCost / b.cpStats.cp));
+        },
     },
 
     methods: {
         capitalize(value) {
-            if (typeof value !== 'string' || value.length <1) {
+            if (typeof value !== 'string' || value.length < 1) {
                 return value;
             }
             return value.charAt(0).toUpperCase() + value.slice(1);
-        },
-        dragsendHandler(ev) {
-            this.draggedName = null;
-            this.showShadow = false;
-        },
-        dragstartHandler(ev, dataName) {
-            this.draggedName = dataName;
-            ev.dataTransfer.setData("application/tech-data-name", dataName);
-        },
-        dragoverHandler(ev, position) {
-            ev.preventDefault();
-            ev.dataTransfer.dropEffect = "move";
-
-            this.shadowIndex = position;
-            this.showShadow = true;
-        },
-        dropHandler(ev) {
-            ev.preventDefault();
-            const dataName = ev.dataTransfer.getData("application/tech-data-name");
-
-            const fromIndex = this.pinned.indexOf(dataName);
-            const toIndex = (this.shadowIndex > fromIndex) ? this.shadowIndex - 1 : this.shadowIndex;
-
-            this.pinned.splice(fromIndex, 1);
-            this.pinned.splice(toIndex, 0, dataName);
-            this.savePinned();
         },
         loadPinned() {
             const data = localStorage.getItem('pinned');
             if (data) {
                 this.pinned = JSON.parse(data);
             }
+        },
+        getCPStats(project) {
+            const pattern = /control point management capacity by ([0-9.]+)/i;
+            for (const effectName of project.effects) {
+                const desc = this.effects.getDescription(effectName);
+                if (!desc) continue;
+                const match = desc.match(pattern);
+                if (match) {
+                    const cp = parseFloat(match[1]);
+                    const totalCost = this.tree.getTotalScience(project.dataName);
+                    const standaloneCost = project.researchCost;
+                    return {
+                        cp,
+                        totalCost,
+                        standaloneCost
+                    };
+                }
+            }
+            return null;
         },
         async loadSave() {
             try {
@@ -174,15 +157,10 @@ const app = Vue.createApp({
             const data = JSON.stringify(this.pinned);
             localStorage.setItem('pinned', data);
         },
-        techByRole(role) {
-            return this.technologies
-                .filter(x => x.role === role)
-                .sort((a, b) => this.tree.getMissingScience(a.dataName) - this.tree.getMissingScience(b.dataName));
-        },
         toggle(role) {
             if (this.opened.includes(role)) {
                 const idx = this.opened.indexOf(role);
-                this.opened.splice(idx, 1); 
+                this.opened.splice(idx, 1);
             } else {
                 this.opened.push(role);
             }
@@ -202,5 +180,10 @@ const app = Vue.createApp({
         },
     }
 });
+
+app.component('tech-card', loadComponent('tech-card', TechCard));
+app.component('tech-roles', loadComponent('tech-roles', TechRoles));
+app.component('tech-pinned', loadComponent('tech-pinned', TechPinned));
+app.component('tech-known', loadComponent('tech-known', TechKnown));
 
 app.mount('#app');

@@ -1,0 +1,27 @@
+<div class="panel pinned_panel">
+    <header>
+        <span>
+            <input type="checkbox" :checked="description" @change="$emit('update:description', $event.target.checked)"
+                id="description_cb" name="description">
+            <label for="description_cb">Description</label>
+        </span>
+        <span>
+            <input type="checkbox" :checked="showEffects" @change="$emit('update:showEffects', $event.target.checked)"
+                id="effects_cb" name="effects">
+            <label for="effects_cb">Effects</label>
+        </span>
+    </header>
+    <h1>Pinned ({{format(totalPinnedCost)}} RP)</h1>
+    <div v-if="categoryTotals.length > 0" class="category-summary">
+        <div v-for="cat in categoryTotals" :key="cat.name" class="category-total">
+            <span class="category-name">{{cat.name}}:</span>
+            <span class="category-value">{{format(cat.cost)}} RP</span>
+        </div>
+    </div>
+    <ul>
+        <tech-card v-for="project in pinnedTechnologies" :key="project.dataName" :project="project" :tree="tree"
+            :effects="effects" :modules="modules" :orgs="orgs" :description="description" :show-effects="showEffects"
+            :is-pinned="true" @toggle-known="$emit('toggle-known', project.dataName)"
+            @unpin="$emit('unpin', project.dataName)" @jump-to-tech="$emit('jump-to-tech', $event)" />
+    </ul>
+</div>

@@ -1,0 +1,10 @@
+<div class="panel known_panel">
+    <h1>Known ({{knownTechnologies.length}})</h1>
+    <ul>
+        <tech-card v-for="project in knownTechnologies" :key="project.dataName" :project="project" :tree="tree"
+            :effects="effects" :modules="modules" :orgs="orgs" :description="description" :show-effects="showEffects"
+            :is-known="true" :is-pinned="pinned.includes(project.dataName)"
+            @toggle-known="$emit('toggle-known', project.dataName)" @pin="$emit('pin', project.dataName)"
+            @unpin="$emit('unpin', project.dataName)" @jump-to-tech="$emit('jump-to-tech', $event)" />
+    </ul>
+</div>
