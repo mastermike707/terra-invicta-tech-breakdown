@@ -22,22 +22,31 @@ const TechPinned = {
                 .sort((a, b) => this.tree.getMissingScience(a.dataName) - this.tree.getMissingScience(b.dataName));
         },
         totalPinnedCost() {
-            return this.tree.getTotalMissingScience(this.pinned);
+            return this.tree.getTotalMissingScience(this.pinnedTechnologies.map(t => t.dataName));
         },
         categoryTotals() {
-            const categories = {};
+            const allUnknowns = new Set();
             this.pinnedTechnologies.forEach(tech => {
-                const category = tech.techCategory || 'Other';
-                if (!categories[category]) {
-                    categories[category] = new Set();
+                if (!tech.known) {
+                    allUnknowns.add(tech.dataName);
                 }
-                categories[category].add(tech.dataName);
+                this.tree.getUnknownRequirements(tech.dataName).forEach(req => allUnknowns.add(req));
             });
 
-            return Object.entries(categories).map(([name, techNames]) => {
+            const categories = {};
+            allUnknowns.forEach(dataName => {
+                const tech = this.tree.get(dataName);
+                const category = tech.techCategory || 'Other';
+                if (!categories[category]) {
+                    categories[category] = 0;
+                }
+                categories[category] += (tech.researchCost || 0);
+            });
+
+            return Object.entries(categories).map(([name, cost]) => {
                 return {
                     name: this.formatCategoryName(name),
-                    cost: this.tree.getTotalMissingScience(Array.from(techNames))
+                    cost: cost
                 };
             }).sort((a, b) => b.cost - a.cost);
         }
