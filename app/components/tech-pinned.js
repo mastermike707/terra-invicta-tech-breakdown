@@ -14,6 +14,7 @@ const TechPinned = {
         'toggle-known', 
         'unpin', 
         'jump-to-tech',
+        'clear-pinned',
     ],
     computed: {
         pinnedTechnologies() {

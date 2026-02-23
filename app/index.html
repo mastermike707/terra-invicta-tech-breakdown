@@ -44,11 +44,11 @@
         </div>
         <tech-pinned v-if="!loading" :pinned="pinned" :tree="tree" :effects="effects" :modules="modules" :orgs="orgs"
             v-model:description="description" v-model:show-effects="show_effects" @toggle-known="toggleKnown"
-            @unpin="unpin" @jump-to-tech="jumpToTech"></tech-pinned>
+            @unpin="unpin" @jump-to-tech="jumpToTech" @clear-pinned="clearPinned"></tech-pinned>
 
         <tech-known v-if="!loading" :tree="tree" :effects="effects" :modules="modules" :orgs="orgs"
             :description="description" :show-effects="show_effects" :pinned="pinned" @toggle-known="toggleKnown"
-            @pin="pin" @unpin="unpin" @jump-to-tech="jumpToTech"></tech-known>
+            @pin="pin" @unpin="unpin" @jump-to-tech="jumpToTech" @clear-known="clearKnown"></tech-known>
     </div>
 
     <script src="https://unpkg.com/pako@2/dist/pako.js"></script>

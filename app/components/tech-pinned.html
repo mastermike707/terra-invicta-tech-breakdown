@@ -11,7 +11,8 @@
             <label for="effects_cb">Effects</label>
         </span>
     </header>
-    <h1>Pinned ({{format(totalPinnedCost)}} RP)</h1>
+    <h1>Pinned ({{format(totalPinnedCost)}} RP) <input type="submit" @click="$emit('clear-pinned')" value="Clear"
+            class="clear-btn"></h1>
     <div v-if="categoryTotals.length > 0" class="category-summary">
         <div v-for="cat in categoryTotals" :key="cat.name" class="category-total">
             <span class="category-name">{{cat.name}}:</span>

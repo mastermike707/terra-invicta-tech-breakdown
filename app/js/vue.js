@@ -174,6 +174,15 @@ const app = Vue.createApp({
                 });
             }
         },
+        clearKnown() {
+            Object.values(this.tree.data).forEach(tech => {
+                tech.known = false;
+            });
+        },
+        clearPinned() {
+            this.pinned = [];
+            this.savePinned();
+        },
         unpin(dataName) {
             this.pinned = this.pinned.filter((x) => x !== dataName);
             this.savePinned();

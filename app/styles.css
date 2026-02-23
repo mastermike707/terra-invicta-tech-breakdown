@@ -184,7 +184,7 @@ header input[type="submit"]:hover {
   margin: 0 15px;
   align-items: center;
 }
-.card h2 .actions a {
+.card h2 .actions a, .clear-btn {
   cursor: pointer;
   font-size: 0.8em;
   font-weight: 500;

@@ -8,7 +8,7 @@ const TechKnown = {
         showEffects: Boolean,
         pinned: Array
     },
-    emits: ['toggle-known', 'pin', 'unpin', 'jump-to-tech'],
+    emits: ['toggle-known', 'pin', 'unpin', 'jump-to-tech', 'clear-known'],
     computed: {
         knownTechnologies() {
             return Object.values(this.tree.data)
