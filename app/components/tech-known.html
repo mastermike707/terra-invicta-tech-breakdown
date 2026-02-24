@@ -1,6 +1,5 @@
 <div class="panel known_panel">
-    <h1>Known ({{knownTechnologies.length}}) <input type="submit" @click="$emit('clear-known')" value="Clear"
-            class="clear-btn"></h1>
+    <tech-summary title="Known" :projects="knownTechnologies" :tree="tree" @clear="$emit('clear-known')" />
     <ul>
         <tech-card v-for="project in knownTechnologies" :key="project.dataName" :project="project" :tree="tree"
             :effects="effects" :modules="modules" :orgs="orgs" :description="description" :show-effects="showEffects"

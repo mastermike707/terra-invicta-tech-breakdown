@@ -46,7 +46,8 @@ a:hover {
 }
 
 tech-pinned,
-tech-known {
+tech-known,
+tech-summary {
   display: contents;
 }
 

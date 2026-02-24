@@ -1,0 +1,8 @@
+<h1>{{title}} ({{projects.length}} - {{format(totalCost)}} RP) <input type="submit" @click="$emit('clear')"
+        value="Clear" class="clear-btn"></h1>
+<div v-if="categoryTotals.length > 0" class="category-summary">
+    <div v-for="cat in categoryTotals" :key="cat.name" class="category-total">
+        <span class="category-name">{{cat.name}}:</span>
+        <span class="category-value">{{format(cat.cost)}} RP</span>
+    </div>
+</div>

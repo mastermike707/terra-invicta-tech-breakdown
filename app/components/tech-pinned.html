@@ -11,14 +11,8 @@
             <label for="effects_cb">Effects</label>
         </span>
     </header>
-    <h1>Pinned ({{format(totalPinnedCost)}} RP) <input type="submit" @click="$emit('clear-pinned')" value="Clear"
-            class="clear-btn"></h1>
-    <div v-if="categoryTotals.length > 0" class="category-summary">
-        <div v-for="cat in categoryTotals" :key="cat.name" class="category-total">
-            <span class="category-name">{{cat.name}}:</span>
-            <span class="category-value">{{format(cat.cost)}} RP</span>
-        </div>
-    </div>
+    <tech-summary title="Pinned" :projects="pinnedTechnologies" :tree="tree" mode="recursive"
+        @clear="$emit('clear-pinned')" />
     <ul>
         <tech-card v-for="project in pinnedTechnologies" :key="project.dataName" :project="project" :tree="tree"
             :effects="effects" :modules="modules" :orgs="orgs" :description="description" :show-effects="showEffects"

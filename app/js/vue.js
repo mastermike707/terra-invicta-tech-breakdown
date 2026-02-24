@@ -193,6 +193,7 @@ const app = Vue.createApp({
 app.component('tech-card', loadComponent('tech-card', TechCard));
 app.component('tech-roles', loadComponent('tech-roles', TechRoles));
 app.component('tech-pinned', loadComponent('tech-pinned', TechPinned));
+app.component('tech-summary', loadComponent('tech-summary', TechSummary));
 app.component('tech-known', loadComponent('tech-known', TechKnown));
 
 app.mount('#app');
