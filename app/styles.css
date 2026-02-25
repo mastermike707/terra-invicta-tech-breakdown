@@ -35,11 +35,11 @@ a:hover {
   background-color: #282b30;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  margin: 10px;
-  padding: 10px;
+  margin: 6px;
+  padding: 8px;
   flex: 1;
   min-width: 0;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 12px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -59,11 +59,11 @@ tech-summary {
 .role h1 {
   background-color: rgba(0, 0, 0, 0.15);
   border-radius: 6px;
-  margin: 4px;
+  margin: 2px;
   cursor: pointer;
-  font-size: 110%;
+  font-size: 105%;
   font-weight: 600;
-  padding: 8px;
+  padding: 6px;
   text-align: center;
   transition: all 0.2s;
 }
@@ -85,10 +85,10 @@ tech-summary {
 .panel h1 {
   background-color: transparent;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  font-size: 130%;
+  font-size: 115%;
   font-weight: 600;
-  margin-bottom: 12px;
-  padding-bottom: 10px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
   text-align: center;
   color: #f8fafc;
 }
@@ -108,11 +108,11 @@ tech-summary {
 
 header {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   height: auto;
   justify-content: center;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 header input[type="search"],
@@ -121,8 +121,8 @@ header input[type="submit"] {
   color: #e2e8f0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  padding: 6px 10px;
-  font-size: 0.9em;
+  padding: 4px 8px;
+  font-size: 0.85em;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -135,25 +135,26 @@ header input[type="submit"]:hover {
 
 .card {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-  margin: 8px 4px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  margin: 4px 2px;
   overflow: hidden;
+  font-size: 0.95em;
 }
 .card .content {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 12px;
-  line-height: 1.5;
+  padding: 8px;
+  line-height: 1.4;
 }
 .card h2 {
   display: flex;
   align-items: center;
-  font-size: 110%;
+  font-size: 105%;
   font-weight: 600;
-  padding: 12px;
+  padding: 6px 8px;
 }
 .card h2 img {
-  margin-right: 10px;
+  margin-right: 6px;
 }
 .card h2 .name {
   cursor: pointer;
@@ -163,8 +164,8 @@ header input[type="submit"]:hover {
   cursor: pointer;
 }
 .card h3 {
-  font-size: 1.1em;
-  margin-top: 10px;
+  font-size: 1.05em;
+  margin-top: 6px;
 }
 .card .pin_btn {
   margin-left: 10px;
@@ -181,15 +182,15 @@ header input[type="submit"]:hover {
 
 .card h2 .actions {
   display: flex;
-  gap: 8px;
-  margin: 0 15px;
+  gap: 6px;
+  margin: 0 10px;
   align-items: center;
 }
 .card h2 .actions a, .clear-btn {
   cursor: pointer;
-  font-size: 0.8em;
+  font-size: 0.75em;
   font-weight: 500;
-  padding: 4px 10px;
+  padding: 2px 8px;
   border: none;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -216,14 +217,21 @@ header input[type="submit"]:hover {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
   cursor: pointer;
-  margin-right: 6px;
-  margin-top: 6px;
-  padding: 4px 8px;
-  font-size: 0.9em;
-  transition: background-color 0.2s;
+  margin-right: 4px;
+  margin-top: 4px;
+  padding: 2px 6px;
+  font-size: 0.85em;
+  transition: background-color 0.2s, filter 0.2s;
+}
+.requirements li.known {
+  background-color: #1b4d2e;
+}
+.requirements li.available,
+.requirements li.locked {
+  background-color: #5c1b18;
 }
 .requirements li:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  filter: brightness(1.2);
 }
 
 .highlight {
@@ -266,9 +274,9 @@ header input[type="submit"]:hover {
 .org_yields {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   margin-top: 2px;
-  font-size: 0.85em;
+  font-size: 0.8em;
   align-items: center;
 }
 
@@ -292,11 +300,11 @@ header input[type="submit"]:hover {
 }
 
 .cp_stats {
-  margin-top: 10px;
-  padding: 8px;
+  margin-top: 6px;
+  padding: 6px;
   background-color: rgba(150, 100, 255, 0.1);
   border-left: 3px solid rgb(150, 100, 255);
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .cp_stats p {
@@ -307,9 +315,9 @@ header input[type="submit"]:hover {
 .category-summary {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-  padding: 10px;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 6px;
   background-color: rgba(255, 255, 255, 0.03);
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -317,12 +325,12 @@ header input[type="submit"]:hover {
 
 .category-total {
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 4px 10px;
+  padding: 2px 6px;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.85em;
   display: flex;
-  gap: 6px;
+  gap: 4px;
   align-items: center;
 }
 
@@ -334,4 +342,46 @@ header input[type="submit"]:hover {
 .category-value {
   color: #fbd38d;
   font-weight: bold;
+}
+
+/* MODULE TABLE STYLES */
+
+.module-table-container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.module-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.module-table td {
+  padding: 2px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85em;
+}
+
+.module-table tr:last-child td {
+  border-bottom: none;
+}
+
+.module-table td:first-child {
+  color: #a0aec0;
+  width: 60%;
+}
+
+.module-table td:last-child {
+  color: #f8fafc;
+  font-weight: 500;
+  text-align: right;
+}
+
+.module-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
 }

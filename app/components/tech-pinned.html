@@ -10,13 +10,18 @@
                 id="effects_cb" name="effects">
             <label for="effects_cb">Effects</label>
         </span>
+        <span>
+            <input type="checkbox" :checked="showModules" @change="$emit('update:showModules', $event.target.checked)"
+                id="modules_cb" name="modules">
+            <label for="modules_cb">Modules</label>
+        </span>
     </header>
     <tech-summary title="Pinned" :projects="pinnedTechnologies" :tree="tree" mode="recursive"
         @clear="$emit('clear-pinned')" />
     <ul>
         <tech-card v-for="project in pinnedTechnologies" :key="project.dataName" :project="project" :tree="tree"
             :effects="effects" :modules="modules" :orgs="orgs" :description="description" :show-effects="showEffects"
-            :is-pinned="true" @toggle-known="$emit('toggle-known', project.dataName)"
+            :show-modules="showModules" :is-pinned="true" @toggle-known="$emit('toggle-known', project.dataName)"
             @unpin="$emit('unpin', project.dataName)" @jump-to-tech="$emit('jump-to-tech', $event)" />
     </ul>
 </div>

@@ -36,6 +36,7 @@ const app = Vue.createApp({
             pinned: [],
             description: false,
             show_effects: true,
+            show_modules: true,
             unknown_requirements: true,
             show_cp: false,
         };

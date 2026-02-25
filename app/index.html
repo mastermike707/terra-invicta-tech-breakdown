@@ -32,23 +32,25 @@
             <ul v-if="!loading && show_cp">
                 <tech-card v-for="{ tech, cpStats } in cpTechnologies" :key="tech.dataName" :project="tech" :tree="tree"
                     :effects="effects" :modules="modules" :orgs="orgs" :show-content="tech.show"
-                    :description="description" :show-effects="show_effects" :is-pinned="pinned.includes(tech.dataName)"
-                    :cp-efficiency-mode="true" @toggle-show="tech.show = !tech.show"
-                    @toggle-known="toggleKnown(tech.dataName)" @pin="pin(tech.dataName)" @unpin="unpin(tech.dataName)"
-                    @jump-to-tech="jumpToTech"></tech-card>
+                    :description="description" :show-effects="show_effects" :show-modules="show_modules"
+                    :is-pinned="pinned.includes(tech.dataName)" :cp-efficiency-mode="true"
+                    @toggle-show="tech.show = !tech.show" @toggle-known="toggleKnown(tech.dataName)"
+                    @pin="pin(tech.dataName)" @unpin="unpin(tech.dataName)" @jump-to-tech="jumpToTech"></tech-card>
             </ul>
             <tech-roles v-else-if="!loading" :technologies="technologies" :tree="tree" :effects="effects"
                 :modules="modules" :orgs="orgs" :opened="opened" :description="description" :show-effects="show_effects"
-                :pinned="pinned" @toggle-role="toggle" @toggle-known="toggleKnown" @pin="pin" @unpin="unpin"
-                @jump-to-tech="jumpToTech"></tech-roles>
+                :show-modules="show_modules" :pinned="pinned" @toggle-role="toggle" @toggle-known="toggleKnown"
+                @pin="pin" @unpin="unpin" @jump-to-tech="jumpToTech"></tech-roles>
         </div>
         <tech-pinned v-if="!loading" :pinned="pinned" :tree="tree" :effects="effects" :modules="modules" :orgs="orgs"
-            v-model:description="description" v-model:show-effects="show_effects" @toggle-known="toggleKnown"
-            @unpin="unpin" @jump-to-tech="jumpToTech" @clear-pinned="clearPinned"></tech-pinned>
+            v-model:description="description" v-model:show-effects="show_effects" v-model:show-modules="show_modules"
+            @toggle-known="toggleKnown" @unpin="unpin" @jump-to-tech="jumpToTech"
+            @clear-pinned="clearPinned"></tech-pinned>
 
         <tech-known v-if="!loading" :tree="tree" :effects="effects" :modules="modules" :orgs="orgs"
-            :description="description" :show-effects="show_effects" :pinned="pinned" @toggle-known="toggleKnown"
-            @pin="pin" @unpin="unpin" @jump-to-tech="jumpToTech" @clear-known="clearKnown"></tech-known>
+            :description="description" :show-effects="show_effects" :show-modules="show_modules" :pinned="pinned"
+            @toggle-known="toggleKnown" @pin="pin" @unpin="unpin" @jump-to-tech="jumpToTech"
+            @clear-known="clearKnown"></tech-known>
     </div>
 
     <script src="https://unpkg.com/pako@2/dist/pako.js"></script>

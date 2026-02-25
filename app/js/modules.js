@@ -37,8 +37,56 @@ class Modules {
         return this.data[dataName];
     }
 
+    getStats(module) {
+        const ignoreKeys = new Set([
+            'dataName', 'friendlyName', 'grouping', 'weightedBuildMaterials', 
+            'iconResource', 'requiredProjectName', 'disable', 'wiki', 
+            'displayName', 'description', 'summary', 'effectName', 
+            'modelName', 'materialsDescription', 'soundCue', 'particleEffect',
+            'particles', 'resourcesGranted', 'unlocks', 'prereqs', 'crew'
+        ]);
+
+        const stats = [];
+        for (const [key, value] of Object.entries(module)) {
+            if (ignoreKeys.has(key)) continue;
+            if (typeof value === 'object' && value !== null) continue;
+            
+            let label = key
+                .replace(/([a-z])([A-Z])/g, '$1 $2')
+                .replace(/_/g, ' ')
+                .trim();
+            label = label.charAt(0).toUpperCase() + label.slice(1);
+
+            stats.push({ label, value });
+        }
+        return stats;
+    }
+
     getProjectModules(requiredProjectName) {
-        return this.byProject[requiredProjectName] || [];
+        const modules = this.byProject[requiredProjectName] || [];
+        
+        const seen = new Set();
+        return modules.filter(module => {
+            const name = module.displayName || module.friendlyName;
+            if (!name) return true;
+            
+            const baseName = name.replace(/ x\d+$/i, '').trim();
+            if (seen.has(baseName)) {
+                return false;
+            }
+            seen.add(baseName);
+            return true;
+        }).map(module => {
+            const name = module.displayName || module.friendlyName;
+            if (name && / x\d+$/i.test(name)) {
+                return {
+                    ...module,
+                    displayName: module.displayName ? module.displayName.replace(/ x\d+$/i, '').trim() : undefined,
+                    friendlyName: module.friendlyName ? module.friendlyName.replace(/ x\d+$/i, '').trim() : undefined
+                };
+            }
+            return module;
+        });
     }
 
     async load() {

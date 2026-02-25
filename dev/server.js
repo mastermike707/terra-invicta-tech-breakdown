@@ -4,6 +4,6 @@ const port = 3000;
 const app = express();
 app.use(express.static('app'));
 // Serve game files under the "/game-data" path
-const gameAssetsPath = "/mnt/d/SteamLibrary/steamapps/common/Terra Invicta/TerraInvicta_Data/StreamingAssets/";
+const gameAssetsPath = "./app/game/";
 app.use('/game-data', express.static(gameAssetsPath));
 app.listen(port, () => console.log(`App listening on port ${port}.`));

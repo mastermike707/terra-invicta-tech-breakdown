@@ -8,6 +8,7 @@ const TechRoles = {
         opened: Array,
         description: Boolean,
         showEffects: Boolean,
+        showModules: Boolean,
         pinned: Array
     },
     emits: ['toggle-role', 'toggle-known', 'pin', 'unpin', 'jump-to-tech'],

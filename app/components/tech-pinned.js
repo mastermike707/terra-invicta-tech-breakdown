@@ -7,10 +7,12 @@ const TechPinned = {
         orgs: Object,
         description: Boolean,
         showEffects: Boolean,
+        showModules: Boolean,
     },
     emits: [
         'update:description', 
-        'update:showEffects', 
+        'update:showEffects',
+        'update:showModules',
         'toggle-known', 
         'unpin', 
         'jump-to-tech',

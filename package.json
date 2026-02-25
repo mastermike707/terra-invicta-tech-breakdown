@@ -6,7 +6,8 @@
     "express": "latest"
   },
   "scripts": {
-    "start": "node dev/server.js"
+    "start": "node dev/server.js",
+    "gameSync": "node dev/update.js"
   },
   "keywords": [
     "terra",

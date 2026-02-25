@@ -6,6 +6,7 @@ const TechKnown = {
         orgs: Object,
         description: Boolean,
         showEffects: Boolean,
+        showModules: Boolean,
         pinned: Array
     },
     emits: ['toggle-known', 'pin', 'unpin', 'jump-to-tech', 'clear-known'],

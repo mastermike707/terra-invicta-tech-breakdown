@@ -30,12 +30,21 @@
                 <h3>Description:</h3>
                 {{project.description || project.summary}}
             </div>
-            <div v-if="(showEffects) && modules.getProjectModules(project.dataName).length > 0">
-                <h3>Unlock module(s):</h3>
-                <ul v-for="module in modules.getProjectModules(project.dataName)" :key="module.dataName">
-                    <li>{{module.displayName || module.friendlyName}} (<a :href="module.wiki" target="_blank">wiki</a>)
-                    </li>
-                </ul>
+            <div v-if="(showModules) && modules.getProjectModules(project.dataName).length > 0">
+                <h3 v-if="showModules">Unlock module(s):</h3>
+                <div v-for="module in modules.getProjectModules(project.dataName)" :key="module.dataName"
+                    class="module-table-container">
+                    <strong>{{module.displayName || module.friendlyName}}</strong> (<a :href="module.wiki"
+                        target="_blank">wiki</a>)
+                    <table class="module-table" v-if="modules.getStats(module).length > 0">
+                        <tbody>
+                            <tr v-for="stat in modules.getStats(module)" :key="stat.label">
+                                <td>{{stat.label}}</td>
+                                <td>{{stat.value}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div v-if="showEffects && orgs.getTechOrgs(project.dataName).length > 0">
                 <h3>Unlock Org(s):</h3>

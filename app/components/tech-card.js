@@ -7,6 +7,7 @@ const TechCard = {
         orgs: Object,
         description: Boolean,
         showEffects: Boolean,
+        showModules: Boolean,
         isPinned: Boolean,
         isKnown: Boolean,
         cpEfficiencyMode: Boolean,

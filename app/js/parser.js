@@ -10,7 +10,7 @@ class Parser {
         }
 
         // Fetch data
-        const response = await fetch(`${Parser.gamePath}/Localization/en/${filename}.en`);
+        const response = await fetch(`${Parser.gamePath}/localization/en/${filename}.en`);
         const data = await response.text();
 
         // Parse data line by line
@@ -27,7 +27,7 @@ class Parser {
             return Parser.templates[filename];
         }
 
-        const response = await fetch(`${Parser.gamePath}/Templates/${filename}.json`);
+        const response = await fetch(`${Parser.gamePath}/templates/${filename}.json`);
         try {
             Parser.templates[filename] = await response.json();
         } catch (err) {

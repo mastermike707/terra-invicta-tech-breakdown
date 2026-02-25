@@ -6,10 +6,10 @@
         <ul v-if="opened.includes(role)" class="content">
             <tech-card v-for="project in techByRole(role)" :key="project.dataName" :project="project" :tree="tree"
                 :effects="effects" :modules="modules" :orgs="orgs" :show-content="project.show"
-                :description="description" :show-effects="showEffects" :is-pinned="pinned.includes(project.dataName)"
-                @toggle-show="project.show = !project.show" @toggle-known="$emit('toggle-known', project.dataName)"
-                @pin="$emit('pin', project.dataName)" @unpin="$emit('unpin', project.dataName)"
-                @jump-to-tech="$emit('jump-to-tech', $event)" />
+                :description="description" :show-effects="showEffects" :show-modules="showModules"
+                :is-pinned="pinned.includes(project.dataName)" @toggle-show="project.show = !project.show"
+                @toggle-known="$emit('toggle-known', project.dataName)" @pin="$emit('pin', project.dataName)"
+                @unpin="$emit('unpin', project.dataName)" @jump-to-tech="$emit('jump-to-tech', $event)" />
         </ul>
     </li>
 </ul>
